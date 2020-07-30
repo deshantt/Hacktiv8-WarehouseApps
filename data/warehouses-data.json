@@ -1,0 +1,17 @@
+[
+    {
+        "city": "Jakarta",
+        "address": "Kelapa Gading",
+        "leaseExpiryDate": "2020/12/01"
+    },
+    {
+        "city": "Palembang",
+        "address": "Alang Alang Lebar",
+        "leaseExpiryDate": "2021/02/02"
+    },
+    {
+        "city": "Yogyakarta",
+        "address": "Malioboron",
+        "leaseExpiryDate": "2020/09/01"
+    }
+]

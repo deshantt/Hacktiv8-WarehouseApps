@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">WarehouseApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <% if(nav === 'home'){  %>
+		        <a type="button" class="btn btn-outline-success" href='#' role="button">Home</a>
+            <%}else{ %>
+                <a class="nav-item nav-link " href="#">Home</a>
+            <%} %>
+            
+            <% if(nav === 'employee'){  %>
+		        <a type="button" class="btn btn-outline-success" href='/employees' role="button">Employees</a>
+            <%}else{ %>
+                <a class="nav-item nav-link " href="/employees">Employees</a>
+            <%} %>
+            
+            <% if(nav === 'warehouse'){  %>
+		        <a type="button" class="btn btn-outline-success" href='/warehouses' role="button">Warehouses</a>
+            <%}else{ %>
+                <a class="nav-item nav-link " href="/warehouses">Warehouses</a>
+            <%} %>
+            
+            <% if(nav === 'product'){  %>
+		        <a type="button" class="btn btn-outline-success" href='/products' role="button">Product</a>
+            <%}else{ %>
+                <a class="nav-item nav-link " href="/products">Product</a>
+            <%} %>
+        </div>
+    </div>
+
+    <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+		<a type="button" class="btn btn-danger" href='/login' role="button">Login</a>
+    </div>
+</nav>
+

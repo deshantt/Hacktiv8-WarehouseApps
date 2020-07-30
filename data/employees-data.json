@@ -1,0 +1,23 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Jojon",
+        "position": "boss",
+        "gender": "male",
+        "salary": 10000000
+    },
+    {
+        "firstName": "Dina",
+        "lastName": "Dimana",
+        "position": "staff",
+        "gender": "female",
+        "salary": 5000000
+    },
+    {
+        "firstName": "Edi",
+        "lastName": "Marsudi",
+        "position": "administrator",
+        "gender": "male",
+        "salary": 7000000
+    }
+]
