@@ -1,5 +1,14 @@
 const { Employee, EmployeeCredential } = require("../models")
 const { compare } = require("../helpers/bcrypt")
+const nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+    service: 'outlook',
+    auth: {
+        user: 'warehouseApp@outlook.co.id',
+        pass: 'cepatlulusHacktiv8'
+    }
+});
 
 class Controller {
     static home(req, res) {
@@ -39,8 +48,23 @@ class Controller {
         // console.log(req.body)
         let { username, password } = req.body
         let userObj = { username, password }
+
+        let emailObj = {
+            from: 'warehouseApp@outlook.co.id',
+            to: userObj.username,
+            subject: 'Welcome to the WarehouseApp',
+            text: 'Hi, Enjoy the ride'
+        };
+
         EmployeeCredential.create(userObj)
-            .then(data => {
+            .then(() => {
+                transporter.sendMail(emailObj, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                });
                 res.redirect("/")
             })
             .catch(err => res.send(err))
