@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./partials/bootstrap") %>
+    <title>Employee List</title>
+</head>
+
+<body>
+    <%- include("./partials/navbar") %><br>
+   
+    <div class="col-md-3 mb-3">
+        <h2>Employee List</h2>
+        <br>
+        <a class="btn btn-success" href="/employees/add" role="button">Add Employee</a>
+    </div>
+
+    <br><br>
+               
+    <div class="card">
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead class="table table-bordered">
+              <tr class="table-info">
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Warehouse</th>
+                <th scope="col">Options</th>
+              </tr>
+            </thead>
+            <tbody class="table table-bordered">
+                <% if (employees.length !==0){ employees.forEach(employee => { %>
+                    <tr>
+                        <td><%= employee.firstName %></td>
+                        <td><%= employee.lastName %></td>
+                        <td><%= employee.position %></td>
+                        <td><%= employee.gender %></td>
+                        <td><%= employee.salary %></td>
+                        <td><%= employee.WarehouseId %></td>
+                        <td>
+                            <a type="button" class="btn btn-warning" href='/employees/<%= employee.id %>/edit' role="button">Edit</a>
+                            <a type="button" class="btn btn-danger" href='/employees/<%= employee.id %>/delete' role="button" onclick="return confirm('Are you sure you want to delete the item?')">Delete</a>
+                            <a type="button" class="btn btn-info" href='#'' role="button">Manage</a>
+						</td>
+                    </tr>
+                    <% }) %>
+                <%} else {%>
+                  <tr>
+                  <td colspan="5">
+                    <h3>Data Employee tidak bisa ditampilkan karena masih kosong</h3>
+                  </td>  
+                  </tr>
+                  <%}%>
+            </tbody>
+          </table>
+        </div>
+    </div>
+
+    <%- include("./partials/footer") %>
+</body>
+
+</html>

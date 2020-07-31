@@ -1,0 +1,20 @@
+[
+    {
+        "name": "naiki",
+        "category": "shoes",
+        "expiryDate": "2020/12/01",
+        "price": 200000
+    },
+    {
+        "name": "wediduss",
+        "category": "accesories",
+        "expiryDate": "2020/11/01",
+        "price": 100000
+    },
+    {
+        "name": "zora",
+        "category": "ladiesWear",
+        "expiryDate": "2020/12/01",
+        "price": 300000
+    }
+]

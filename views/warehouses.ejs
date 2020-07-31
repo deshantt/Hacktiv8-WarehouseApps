@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./partials/bootstrap") %>
+    <title>Warehouse List</title>
+</head>
+
+<body>
+    <%- include("./partials/navbar") %><br>
+
+    <div class="col-md-3 mb-3">
+        <h2>Warehouse List</h2>
+        <br>
+        <a class="btn btn-success" href="/warehouses/add" role="button">Add Warehouse</a>
+    </div>
+    
+    <br><br>
+    <div class="card">
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead class="table table-bordered">
+                <tr class="table-success">
+                    <th scope="col">City</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Lease Expiry Date</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody class="table table-bordered">
+                <% if (warehouses.length !==0){ warehouses.forEach(warehouse => { %>
+                    <tr>
+                        <td><%= warehouse.city %></td>
+                        <td><%= warehouse.address %></td>
+                        <td><%= warehouse.leaseExpiryDate %></td>
+                        <td>
+                            <a type="button" class="btn btn-warning" href='/warehouses/<%= warehouse.id %>/edit' role="button">Edit</a>
+                            <a type="button" class="btn btn-danger" href='/warehouses/<%= warehouse.id %>/delete' role="button" onclick="return confirm('Are you sure you want to delete the item?')">Delete</a>
+                            <a type="button" class="btn btn-info" href='#'' role="button">Stock</a>
+                            <a type="button" class="btn btn-primary" href='#'' role="button">Employee</a>
+						</td>
+                    </tr>
+                    <% }) %>
+                <%} else {%>
+                  <tr>
+                  <td colspan="5">
+                    <h3>Data Warehouse tidak bisa ditampilkan karena masih kosong</h3>
+                  </td>  
+                  </tr>
+                  <%}%>
+            </tbody>
+          </table>
+        </div>
+    </div>
+
+    <%- include("./partials/footer") %>
+</body>
+
+</html>
